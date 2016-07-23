@@ -116,48 +116,4 @@ $(function(){
             $('.shopList ul').css({left:$('.shopList ul').offset().left()-225});
         })
 
-
-
-        var endTimeStr = '2016/7/1 12:00:00';
-        var endTime = new Date(endTimeStr);//日期对象
-        // console.log(endTime)
-        
-        
-        function showTime(){
-            // 获取当前时间
-            var now = new Date();//日期对象
-
-            // 计算当前时间和结束时间的差值（毫秒）
-            var offsetTime = endTime.getTime() - now.getTime();
-            // console.log(offsetTime,Date.parse(endTime) - Date.parse(now))
-            
-            
-            // 得到秒数&剩余的秒数
-            var seconds = parseInt(offsetTime/1000);
-            var secLeft = seconds%60;
-
-
-
-            // 得到分钟数&剩余的分钟数
-            var minuets = parseInt(seconds/60);
-            var minLeft = minuets%60;
-
-            // 得到小时数&剩余的小时数
-            var hours = parseInt(minuets/60);
-            // var hourLeft = hours%24;
-            
-
-            // 写入页面
-            $('.show_listS').html('距离团购结束' + endTimeStr + '，还有：' + hours + '时' + minLeft + '分' + secLeft + '秒';)
-        }
-
-        // 页面加载时就显示时间
-        showTime();
-
-        // 每隔一秒显示一次倒计时
-        var timer = setInterval(showTime,1000);
-        console.log(timer);
-
-    }
-
 })
